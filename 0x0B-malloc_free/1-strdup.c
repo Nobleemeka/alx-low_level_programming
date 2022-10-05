@@ -1,41 +1,29 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 #include "main.h"
-
+#include <stdlib.h>
 /**
- * _strdup - check the code for Alx school students.
- * @str: argument of function
- * Return: Always 0 (success)
+ * _strdup - returns a pointer to a newly allocated space in memory.
+ * @str: string.
+ *
+ * Return: pointer of an array of chars
  */
-
 char *_strdup(char *str)
 {
-
-	unsigned int len = 0;
-	unsigned int i = 0;
-	char *array;
+	char *strout;
+	unsigned int i, j;
 
 	if (str == NULL)
-	{
 		return (NULL);
-	}
 
-	while (str[1] != '\0')
-	{
-		len++;
-		i++;
-	}
-	array = malloc((len * (sizeof(char))) + 1);
-	if (array == NULL)
-	{
+	for (i = 0; str[i] != '\0'; i++)
+		;
+
+	strout = (char *)malloc(sizeof(char) * (i + 1));
+
+	if (strout == NULL)
 		return (NULL);
-	}
-	i = 0;
-	while (str[i] != '\0')
-	{
-			array[i] = str[i];
-			i++;
-	}
-	return (array);
+
+	for (j = 0; j <= 1; j++)
+		strout[j] = str[j];
+
+	return (strout);
 }
